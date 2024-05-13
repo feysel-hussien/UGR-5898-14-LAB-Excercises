@@ -1,0 +1,48 @@
+fun findMax(numbers: List<Int>): Int {
+    if (numbers.isEmpty()) {
+        return Int.MIN_VALUE
+    }
+
+    var max = numbers[0]
+    for (number in numbers) {
+        if (number > max) {
+            max = number
+        }
+    }
+    return max
+}
+
+fun filterEvenNumbers(numbers: List<Int>): List<Int> {
+    val evenNumbers = mutableListOf<Int>()
+    for (number in numbers) {
+        if (number % 2 == 0) {
+            evenNumbers.add(number)
+        }
+    }
+    return evenNumbers.toList()
+}
+
+fun calculateAverage(numbers: List<Double>): Double {
+    if (numbers.isEmpty()) {
+        return Double.NaN
+    }
+
+    var sum = 0.0
+    for (number in numbers) {
+        sum += number
+    }
+    return sum / numbers.size
+}
+
+fun main() {
+    val numberList = listOf(10, 5, 18, 2, 7)
+
+    val maxNumber = findMax(numberList)
+    println("Maximum value: $maxNumber")
+
+    val evenList = filterEvenNumbers(numberList)
+    println("Even numbers: $evenList")
+
+    val averageValue = calculateAverage(listOf(1.5, 3.2, 4.8))
+    println("Average: $averageValue")
+}
