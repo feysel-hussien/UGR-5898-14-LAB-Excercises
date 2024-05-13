@@ -1,0 +1,28 @@
+fun analyzeString(text: String): Triple<Int, Int, Int> {
+    var wordCount = 0
+    var uppercaseCount = 0
+    var vowelCount = 0
+
+    val words = text.split("\\s+")
+    wordCount = words.size
+
+    for (char in text) {
+        if (char.isUpperCase()) {
+            uppercaseCount++
+        }
+        if (char.toLowerCase() in 'a'..'u') {
+            vowelCount++
+        }
+    }
+
+    return Triple(wordCount, uppercaseCount, vowelCount)
+}
+
+fun main() {
+    val text = "hello class!"
+    val (words, uppercase, vowels) = analyzeString(text)
+
+    println("Number of words: $words")
+    println("Number of uppercase letters: $uppercase")
+    println("Number of vowels: $vowels")
+}
