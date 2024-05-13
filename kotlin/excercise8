@@ -1,0 +1,14 @@
+import kotlin.random.Random
+
+val passwordLength = 8 // Adjust password length as needed
+
+val charPool = ('a'..'z') + ('A'..'Z') + ('0'..'9') + ('!'..'@' + '#' + '$' + '%' + '&' + '*' + '(' + ')' + '_' + '-' + '+' + '=')
+
+val password = StringBuilder()
+val random = Random
+
+for (i in 0 until passwordLength) {
+    password.append(charPool.random(random))
+}
+
+println("Generated password: $password")
