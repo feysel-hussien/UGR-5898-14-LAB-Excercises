@@ -1,0 +1,20 @@
+fun main() {
+    println("Enter your numeric grade (0-100):")
+    val grade = readLine()?.toIntOrNull() ?: return // Check for valid input
+
+    var letterGrade: String
+
+    if (grade >= 90) {
+        letterGrade = "A"
+    } else if (grade >= 80) {
+        letterGrade = "B"
+    } else if (grade >= 70) {
+        letterGrade = "C"
+    } else if (grade >= 60) {
+        letterGrade = "D"
+    } else {
+        letterGrade = "F"
+    }
+
+    println("Your letter grade is: $letterGrade")
+}
