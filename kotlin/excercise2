@@ -1,0 +1,17 @@
+fun main() {
+    var distance = 10.0
+    val initialUnit = "km"
+    val targetUnit = "miles"
+
+    val conversionRate = if (initialUnit == "km" && targetUnit == "miles") {
+        0.621371
+    } else if (initialUnit == "miles" && targetUnit == "km") {
+        1.60934
+    } else {
+        1.0
+    }
+
+    val convertedDistance = distance * conversionRate
+
+    println("Converted distance: $convertedDistance $targetUnit")
+}
