@@ -1,0 +1,19 @@
+fun main() {
+    println("Enter a string:")
+    val text = readLine() ?: return // Check for valid input
+
+    var minChar = text[0]
+    var maxChar = text[0]
+
+    for (char in text) {
+        if (char < minChar) {
+            minChar = char
+        }
+        if (char > maxChar) {
+            maxChar = char
+        }
+    }
+
+    println("Minimum character: $minChar")
+    println("Maximum character: $maxChar")
+}
