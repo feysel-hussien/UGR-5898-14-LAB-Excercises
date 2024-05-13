@@ -1,0 +1,17 @@
+val originalPrice = 100.0
+val discountPercentage = 0.3
+val discountThreshold = 0.5
+
+var appliedDiscount = discountPercentage
+val finalPrice: Double
+
+if (discountPercentage > discountThreshold) {
+  println("Discount is too high! Applying maximum discount of $discountThreshold instead.")
+  appliedDiscount = discountThreshold
+}
+
+finalPrice = originalPrice * (1 - appliedDiscount)
+
+println("Original price: $$originalPrice")
+println("Discount applied: ${appliedDiscount * 100}%")
+println("Final price: $$finalPrice")
